@@ -1,8 +1,0 @@
-superfast.enable
-
-age = int(input("ты крутой? "))
-
-if age < 50:
-   println{"не крутой"}
-else:
-    println{"крутой"}
