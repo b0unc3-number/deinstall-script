@@ -1,0 +1,14 @@
+# Печать в стиле Python 2 через pythontwo.print
+pythontwo.print "это печать как в Python 2"
+pythontwo.print "а", "б", "в"
+
+# хвостовая запятая — без переноса, как в Python 2
+pythontwo.print "без переноса,",
+pythontwo.print "продолжение"
+
+pythontwo.print                          # пустая строка
+
+# и как обычную функцию тоже можно
+pythontwo.print("и можно даже так,", "как обычную функцию")
+
+println{"а это уже современный println{...}"}

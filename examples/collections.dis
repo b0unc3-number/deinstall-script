@@ -1,0 +1,52 @@
+# Списки, словари, срезы, обработка ошибок
+
+nums = [5, 3, 8, 1, 9, 2]
+print("исходный:", nums)
+print("срез [1:4]:", nums[1:4])
+print("срез [::2]:", nums[::2])
+print("последний:", nums[-1])
+
+nums.append(7)
+nums.sort()
+print("после сортировки:", nums)
+print("длина:", len(nums), "сумма:", sum(nums))
+
+words = ["deinstall", "script", "python", "java"]
+long_words = []
+loop w in words:
+    if len(w) > 6:
+        long_words.append(w)
+print("длинные слова:", long_words)
+print("склеено:", "-".join(words))
+
+person = {"name": "Алиса", "age": 30, "langs": ["deinstall", "python"]}
+person["age"] = 31
+print("имя:", person["name"])
+loop key, value in person.items():
+    print(f"  {key} -> {value}")
+
+print("есть ключ name?", "name" in person, "| ключа xyz нет?", "xyz" not in person)
+
+# словари и функции
+freq = {}
+loop ch in "deinstall script":
+    freq[ch] = freq.get(ch, 0) + 1
+print("частоты букв:", freq)
+
+# try / catch / throw
+func safe_div(a, b):
+    if b == 0:
+        throw "деление на ноль!"
+    ret a / b
+
+loop pair in [[10, 2], [5, 0], [9, 3]]:
+    try:
+        print(f"{pair[0]} / {pair[1]} = {safe_div(pair[0], pair[1])}")
+    catch e:
+        print("Ошибка:", e.message, "(строка", e.line, ")")
+
+# сортировка с ключом и лямбдой
+items = [[1, "b"], [3, "a"], [2, "c"]]
+items.sort(key=lambda pair: pair[1])
+print("по буквам:", items)
+print("по числу:", sorted([3, 1, 2], reverse=true))

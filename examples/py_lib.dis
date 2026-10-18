@@ -1,0 +1,37 @@
+# Работа с библиотеками Python: math, random, json, time
+# В Java-версии эти же импорты идут через мост к Python.
+
+import math
+import random
+import json
+import time
+
+print("pi =", math.pi, "| sqrt(2) =", round(math.sqrt(2), 6))
+print("log(100) =", math.log(100, 10), "| factorial(10) =", math.factorial(10))
+
+random.seed(42)
+rolls = []
+loop i in range(6):
+    rolls.append(random.randint(1, 6))
+print("броски костей:", rolls)
+print("выбор случайного слова:", random.choice(["деинсталл", "скрипт", "питон"]))
+
+data = {"япония": "токио", "франция": "париж", "мир": [1, 2, 3], "ноль": null}
+encoded = json.dumps(data, indent=2, sort_keys=true, ensure_ascii=false)
+print("JSON:\n" + encoded)
+decoded = json.loads(encoded)
+print("обратно:", decoded["франция"], "| сумма:", sum(decoded["мир"]))
+
+# именованные аргументы и распаковка
+func add(a, b, c=0):
+    ret a + b + c
+
+args = [4, 5]
+opts = {"c": 6}
+print("add(4, 5, c=6) =", add(*args, **opts))
+
+start = time.time()
+total = 0
+loop i in range(100000):
+    total += i
+print(f"сумма 0..99999 = {total}, заняло {round(time.time() - start, 4)} c")

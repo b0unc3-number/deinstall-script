@@ -1,0 +1,30 @@
+# Числа Фибоначчи: итеративно и рекурсивно с кэшем
+
+func fib(n):
+    if n < 2:
+        ret n
+    a = 0
+    b = 1
+    loop i in range(2, n + 1):
+        a, b = b, a + b
+    ret b
+
+cache = {}
+func fib_memo(n):
+    if n in cache:
+        ret cache[n]
+    if n < 2:
+        cache[n] = n
+        ret n
+    v = fib_memo(n - 1) + fib_memo(n - 2)
+    cache[n] = v
+    ret v
+
+loop i in range(11):
+    print(f"fib({i}) = {fib(i)}, fib_memo({i}) = {fib_memo(i)}")
+
+# анонимные функции и функции как значения
+square = lambda x: x * x
+apply_twice = lambda f, x: f(f(x))
+print("square(9) =", square(9))
+print("apply_twice(square, 3) =", apply_twice(square, 3))

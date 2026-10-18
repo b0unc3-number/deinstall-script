@@ -1,0 +1,9 @@
+superfast.enable
+
+age = (input("ты крутой? "))
+
+if age < 50:
+   println{"не крутой"}
+   
+else:
+    println{"крутой"}

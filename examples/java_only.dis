@@ -1,0 +1,19 @@
+# Пример только для Java-версии: доступ к классам Java
+import java.lang.Math
+import java.time.LocalDate
+import java.util.ArrayList
+
+print("Math.PI =", Math.PI)
+print("Math.sqrt(216) =", Math.sqrt(216))
+print("Math.max(3, 7) =", Math.max(3, 7))
+
+today = LocalDate.now()
+print("сегодня:", today)
+print("год:", today.getYear())
+
+words = ArrayList()
+words.add("деинсталл")
+words.add("скрипт")
+words.add("java")
+print("список Java:", words, "| размер:", len(words))
+print("первое слово:", words[0])

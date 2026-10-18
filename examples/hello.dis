@@ -1,0 +1,23 @@
+# Привет, мир! — Deinstall Script
+func greet(name):
+    print(f"Привет, {name}!")
+
+greet("Deinstall Script")
+
+# переменные, условия, циклы
+var n = 7
+x = 10
+if n * 2 > 10:
+    print("n удвоенный больше 10")
+elseif n == 0:
+    print("n равно нулю")
+else:
+    print("иначе: n маленькое")
+
+loop i in range(3):
+    print(f"итерация {i}")
+
+# true / false / null
+ready = true
+nothing = null
+print(ready, nothing, 1 == 1.0)

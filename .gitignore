@@ -1,0 +1,9 @@
+# сборка и кэш
+__pycache__/
+*.pyc
+*.class
+*.exe
+
+# системное
+Thumbs.db
+desktop.ini

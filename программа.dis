@@ -1,0 +1,6 @@
+age = int(input("ты крутой?"))
+
+if age > 50:
+   println{"ок ты крутой"}
+else:
+    println{"ок ты не крутой"}
